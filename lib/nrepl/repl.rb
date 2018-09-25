@@ -128,7 +128,7 @@ module Nrepl
       parser = BEncode::Parser.new(sock)
 
       until done
-        retriable timeout: 0.2, tries: 100 do
+        retriable timeout: 3, tries: 100 do
           decoded = parser.parse!
 
           puts "<<< #{decoded}" if @debug
