@@ -136,7 +136,7 @@ module Nrepl
           yield decoded if block_given?
 
           status = responses.last['status']
-          done = status.include?('done') || status.include?('error')
+          done = status && (status.include?('done') || status.include?('error'))
         end
       end
 
